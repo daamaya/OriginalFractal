@@ -4,9 +4,14 @@ public void setup(){
 	noFill();
 }
 public void draw(){
-	spirangle(700,700);
+	fractal(350,350,700);
 }
-public void spirangle(float x, float y){
-	triangle(0,y, x,y, x/2,00);
-	
+public void fractal(float x, float y, int d){
+	ellipse(x,y,d,d);
+	if(d > 10){
+		// fractal(x,y/2,d/2);
+		fractal(x+(x/2),y,d/2);
+		// fractal(x,y*3/2,d/2);
+		//fractal(x/2,y,d/2);
+	}
 }
